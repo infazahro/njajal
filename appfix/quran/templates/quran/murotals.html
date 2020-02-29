@@ -1,0 +1,75 @@
+{% extends 'quran/base.html' %}
+{% block title %}All Murotals{% endblock %}
+{% block murotals_active %}active{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid murotals-container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" {% if filter_by == 'all' %}class="active"{% endif %}><a href="{% url 'quran:murotals' 'all' %}">View All</a></li>
+                <li role="presentation" {% if filter_by == 'favorites' %}class="active"{% endif %}><a href="{% url 'quran:murotals' 'favorites' %}">Favorites</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>67
+                                <th>Nama Surah</th>
+                                <th>Qori</th>
+                                <th>Audio File</th>
+                                <th>Juz</th>
+                                <th>Favorite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for murotal in murotal_list %}
+                                <tr>
+                                    <td>{{ murotal.surah }}</td>
+                                    <td>{{ murotal.qori.nama_qori }}</td>
+                                    <!-- <script>
+                                            function play()
+                                            {
+                                                     var source = document.getElementById('myaudio');
+                                                     source.src = ' /media'+ your_file_name;        
+                                            }
+                                            </script>
+                                    <td> -->
+                                        <a target="_play" href="{{ 'media/ .mp3' }}">
+                                           <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+                                            <1/button> 
+                                           <!-- <button type="button" id='playfile' value = 'Play' onclick=play()>Play</button>  -->
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'quran:detail' murotal.qori.id %}">
+                                            <img src="{{ murotal.qori.gambar.url }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" />
+                                        </a>
+                                        <a href="{% url 'quran:detail' murotal.qori.id %}">{{ murotal.qori.juz }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'quran:favorite' murotal.id %}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if murotal.is_favorite %}active{% endif %}"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

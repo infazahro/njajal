@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<div class="row">
+    {% for song in playlist %}
+        <a href="playlist/{{song.title}}/"><h3>{{song.title}} -- {{song.duration}}</h3></a>
+    {% endfor %}
+</div>
+
+{% endblock %}
+{% block form %}{% endblock %}
+
+
+
+<span><strong>Misary</strong> 
+    (<a href="/media/misary/" target="_blank">GO</a>) 
+    (<a href="/misary/000_versebyverse.zip" target="_blank">ZIP</a>) 
+    (<a href="/media/misary/000_checksum.md5" target="_blank">MD5</a>)</span>						  
+  </li><li class="closed">
+    <td>
+        <a target="_play" href="{{ 'media/misary/000_versebyverse.zip/.mp3' }}">
+       <button type="button" class="btn btn-success btn-xs">
+            <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+        </button> 
+
+    <span><strong>Ali Basfar</strong> 
+    (<a href="/media/Ali Basfar/" target="_blank">GO</a>) 
+    (<a href="/media/Ali Basfar/000_versebyverse.zip" target="_blank">ZIP</a>) 
+    (<a href="/media/Ali Basfar/000_checksum.md5" target="_blank">MD5</a>)</span>						  
+  </li><li class="closed">
+
+</ul></li>
+<li  class="closed"><strong>misary</strong> (<a href="/media/misary/PageMp3s/" target="_blank">Page Mp3s</a>)
+</li>

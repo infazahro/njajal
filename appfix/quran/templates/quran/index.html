@@ -1,0 +1,124 @@
+{% extends 'quran/base.html' %} 
+{% block qoris_active %}active{% endblock %}
+
+{% block body %}
+<div class="qoris-container container-fluid">
+
+    <!-- qoris -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 id="user-name"> Album MP3 Al-Qur'an </h3>
+    <!-- kalau mau pakai nama sendiri pakai  
+        <h3 id="user-name"> Album {{ user.username }} </h3> 
+         akan tercetak (Album nama user)--> 
+        </div>
+        {% if qoris %}
+            {% for qori in qoris %}
+                <div class="col-sm-4 col-lg-2">
+                    <div class="thumbnail">
+                        <a href="{% url 'quran:detail' qori.id %}">
+                            <img src="{{ qori.gambar.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h4>{{ qori.nama_qori }}</h4>
+                            <p>{{ qori.juz }}</p>
+
+                            <!-- View Details -->
+                            <a href="{% url 'quran:detail' qori.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                            <!-- Delete Qori -->
+                            <form action="{% url 'quran:delete_qori' qori.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="qori_id" value="{{ qori.id }}" />
+                                <button type="submit" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </form>
+
+                            <!-- Favorite Qori -->
+                            <a href="{% url 'quran:favorite_qori' qori.id %}" class="btn btn-default btn-sm btn-favorite" role="button">
+                                <span class="glyphicon glyphicon-star {% if qori.is_favorite %}active{% endif %}"></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+            {% endfor %}
+        {% else %}
+            <div class="col-sm-12">
+                <br>
+                <a href="{% url 'quran:create_qori' %}">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Add Qori
+                    </button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- If user searches and there are murotals -->
+    {% if murotals %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Murotals</h3>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nama Surah</th>
+                                    <th>Nama Qori</th>
+                                    <th>Audio File</th>
+                                    <th>Qori</th>
+                                    <th>Favorite</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for murotal in murotals %}
+                                    <tr>
+                                        <td>{{ murotal.surah }}</td>
+                                        <td>{{ murotal.qori.nama_qori }}</td>
+                                        <td>
+                                             <!--    <script>
+                                                        function play()
+                                                        {
+                                                                 var source = document.getElementById('myaudio');
+                                                                 source.src = ' /media'+ your_file_name;        
+                                                        }
+                                                        </script> -->
+                                                <td>
+                                                        <a target="_play" href="{{ 'media/misary/000_versebyverse.zip/.mp3' }}">
+                                                       <button type="button" class="btn btn-success btn-xs">
+                                                            <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+                                                        </button> 
+                                             <!-- <button type="button" id='playfile' value = 'Play' onclick=play()>Play</button>  --> 
+
+                                                                                      
+
+
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'quran:detail' murotal.qori.id %}">
+                                                <img src="{{ murotal.qori.gambar.url }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" />
+                                            </a>
+                                            <a href="{% url 'quran:detail' murotal.qori.id %}">{{ murotal.qori.juz }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'quran:favorite' murotal.id %}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if murotal.is_favorite %}active{% endif %}"></span></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

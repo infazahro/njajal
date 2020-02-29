@@ -1,0 +1,115 @@
+{% extends 'quran/base.html' %}
+{% block title %}{{ qori }}{% endblock %}
+{% block qos_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid murotals-container">
+
+    <div class="row">
+
+        <!-- Left Qori Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'quran:detail' qori.id %}">
+                        {% if qori.gambar %}
+                            <img src="{{ qori.gambar.url }}" class="img-responsive">
+                        {% else %}
+                            <h3>No image to display</h3>
+                        {% endif %}
+                    </a>
+                    <h1>{{ qori.nama_qori }}</h1>
+                  <!-- <p class="juz">{{ qori.juz }}</p>
+                    <h6 class="jenis">{{ qori.jenis }}</h6> --> 
+
+        <!--nyoba naro player music disini-->
+            <div style='float:right;'>
+                <br>			
+                    Ayat : <input id='txt_aya_awal' name='txt_aya_awal' size='3' style='font-size:12px' value='1' > 
+                            - <input id='txt_aya_akhir' name='txt_aya_akhir' size='3' style='font-size:12px' value='3' >
+
+                    Ulang Ayat : 	<input id='txt_ulang_aya' 	name='txt_ulang_semua' 	size='1' style='font-size:12px' value='3' > 
+                    <input style='font-size:12px' type='button' value='PROSES' onclick='md5()'>
+                    <br>
+                    <br/>
+                    </div>
+                    <audio src="/media/misary/000_versebyverse.zip" autoplay controls></audio>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Murotal Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'quran:detail' qori.id %}">View All</a></li>
+                <li role="presentation"><a href="{% url 'quran:create_murotal' qori.id %}">Add Murotal</a></li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3>All Murotals</h3>
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Nama Surah</th>
+                            <th>Audio File</th>
+                            <th>Favorite</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for murotal in qori.murotal_set.all %}
+                            <tr>
+                                <td>{{ murotal.surah }}</td>
+                                <td>
+                                    <!--
+                                        <script>
+                                                function play()
+                                                {
+                                                         var source = document.getElementById('myaudio');
+                                                         source.src = ' /media'+ your_file_name;        
+                                                }
+                                                </script>
+                                        <td> -
+                                               <audio src="/media/Ar-Rahmaan.mp3" autoplay controls></audio> ->
+                                              <button type="button" class="btn btn-success btn-xs">
+                                                    <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+                                                </button> -->
+                                             <!-- <button type="button" id='playfile' value = 'Play' onclick=play()>Play</button>  --> 
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'quran:favorite' murotal.id %}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if murotal.is_favorite %}active{% endif %}"></span></a>
+                                </td>
+                                <td>
+                                    <form action="{% url 'quran:delete_murotal' qori.id murotal.id %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="murotal_id" value="{{ murotal.id }}" />
+                                        <button type="submit" class="btn btn-danger btn-xs">
+                                            <span class="glyphicon glyphicon-remove"></span>&nbsp; Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
