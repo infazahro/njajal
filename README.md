@@ -1,14 +1,15 @@
 # njajal
 
 data audio neng folder MEDIA
+<br>
+<br>
 
 
-
-Terus ene folder Misary <t>
+Terus ene folder Misary <br>
 misary itu salah satu syekh yang melantunkan ayat..
 <br>
 <br>
-karna ayatnya banyak jadi buat contoh dimasukin surat alfatihah ayat 1-7 
+karna ayatnya banyak jadi buat contoh dimasukin surat alfatihah ayat 1-7 <br>
 dijadiin zip  namanya 000_versebyverse.zip
 <br>
 <br>
@@ -16,7 +17,7 @@ dijadiin zip  namanya 000_versebyverse.zip
 
 
 
-misary.html isinya nomor2 audio ayat 
+misary.html isinya nomor2 audio ayat <br>
 yang semua audionya bakal masuk ke 000_versebyverse.zip
 <br>
 <br>
@@ -26,9 +27,9 @@ contohe "001001.mp3"   ayat 1 surat alfatihah
 <br>
 
 
-ada juga file .md5 
-sama si isinya kayak misary cuma bedanya dibuat .md5 
-sapa tau bisa buat manggil data audionya
+ada juga file .md5 <br>
+sama si isinya kayak misary cuma bedanya dibuat .md5 <br>
+sapa tau bisa buat manggil data audionya<br>
 
 <br>
 <br>
@@ -44,11 +45,12 @@ tadi ngeliat contoh .. punya web orang pake klik kanan tapi gatau bs ato enggak 
 
 rencananya setelah milih qori ..
 <br>
-didalemnya ada daftar surat.. truz sebelom play 
-milih ayat brapa sampe berapa
+didalemnya ada daftar surat.. truz sebelom play <br>
+milih ayat brapa sampe berapa<br>
 <br>
 <br>
-terus nulis juga jumlah putar ulangnya.. 
+<br>
+terus nulis juga jumlah putar ulangnya.. <br>
 baru di play
 <br>
 mau nyoba juga di play back
@@ -59,5 +61,5 @@ mau nyoba juga di play back
 <br>
 
 sumber data audio lengkap di http://www.everyayah.com/data/status.php
-<br>
+<br><br>
 nah  tadi  liat contohnya disini pake klik kanan view page source
