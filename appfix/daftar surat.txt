@@ -1,0 +1,230 @@
+<script>
+										var arr_sura = Array();
+									
+										arr_sura[1] = "Al Fatihah" ;
+										
+										arr_sura[2] = "Al Baqarah" ;
+										
+										arr_sura[3] = "Ali Imran" ;
+										
+										arr_sura[4] = "An Nisaa" ;
+										
+										arr_sura[5] = "Al Maidah" ;
+										
+										arr_sura[6] = "Al An'am" ;
+										
+										arr_sura[7] = "Al A'raf" ;
+										
+										arr_sura[8] = "Al Anfaal" ;
+										
+										arr_sura[9] = "At Taubah" ;
+										
+										arr_sura[10] = "Yunus" ;
+										
+										arr_sura[11] = "Huud" ;
+										
+										arr_sura[12] = "Yusuf" ;
+										
+										arr_sura[13] = "Ar Ra'du" ;
+										
+										arr_sura[14] = "Ibrahim" ;
+										
+										arr_sura[15] = "Al Hijr" ;
+										
+										arr_sura[16] = "An Nahl" ;
+										
+										arr_sura[17] = "Al Israa'" ;
+										
+										arr_sura[18] = "Al Kahfi" ;
+										
+										arr_sura[19] = "Maryam" ;
+										
+										arr_sura[20] = "Thaahaa" ;
+										
+										arr_sura[21] = "Al Anbiyaa" ;
+										
+										arr_sura[22] = "Al Hajj" ;
+										
+										arr_sura[23] = "Al Mu'minun" ;
+										
+										arr_sura[24] = "An Nuur" ;
+										
+										arr_sura[25] = "Al Furqaan" ;
+										
+										arr_sura[26] = "Asy Syu'ara" ;
+										
+										arr_sura[27] = "An Naml" ;
+										
+										arr_sura[28] = "Al Qashash" ;
+										
+										arr_sura[29] = "Al 'Ankabut" ;
+										
+										arr_sura[30] = "Ar Ruum" ;
+										
+										arr_sura[31] = "Luqman" ;
+										
+										arr_sura[32] = "As Sajdah" ;
+										
+										arr_sura[33] = "Al Ahzab" ;
+										
+										arr_sura[34] = "Saba'" ;
+										
+										arr_sura[35] = "Faathir" ;
+										
+										arr_sura[36] = "Yaa Siin" ;
+										
+										arr_sura[37] = "Ash Shaaffat" ;
+										
+										arr_sura[38] = "Shaad" ;
+										
+										arr_sura[39] = "Az Zumar" ;
+										
+										arr_sura[40] = "Al Mu'min / Al Ghafir" ;
+										
+										arr_sura[41] = "Al Fushilat" ;
+										
+										arr_sura[42] = "Asy Syuura" ;
+										
+										arr_sura[43] = "Az Zukhruf" ;
+										
+										arr_sura[44] = "Ad Dukhaan" ;
+										
+										arr_sura[45] = "Al Jaatsiyah" ;
+										
+										arr_sura[46] = "Al Ahqaaf" ;
+										
+										arr_sura[47] = "Muhammad" ;
+										
+										arr_sura[48] = "Al Fath" ;
+										
+										arr_sura[49] = "Al Hujuraat" ;
+										
+										arr_sura[50] = "Qaaf" ;
+										
+										arr_sura[51] = "Adz Dzaariyaat" ;
+										
+										arr_sura[52] = "Ath Thuur" ;
+										
+										arr_sura[53] = "An Najm" ;
+										
+										arr_sura[54] = "Al Qamar" ;
+										
+										arr_sura[55] = "Ar Rahmaan" ;
+										
+										arr_sura[56] = "Al Waaqi'ah" ;
+										
+										arr_sura[57] = "Al Hadiid" ;
+										
+										arr_sura[58] = "Al Mujaadalah" ;
+										
+										arr_sura[59] = "Al Hasyr" ;
+										
+										arr_sura[60] = "Al mumtahanah" ;
+										
+										arr_sura[61] = "Ash Shaff" ;
+										
+										arr_sura[62] = "Al Jumuah" ;
+										
+										arr_sura[63] = "Al Munafiqun" ;
+										
+										arr_sura[64] = "Ath Taghabun" ;
+										
+										arr_sura[65] = "Ath Thalaaq" ;
+										
+										arr_sura[66] = "At Tahriim" ;
+										
+										arr_sura[67] = "Al Mulk" ;
+										
+										arr_sura[68] = "Al Qalam" ;
+										
+										arr_sura[69] = "Al Haaqqah" ;
+										
+										arr_sura[70] = "Al Ma'aarij" ;
+										
+										arr_sura[71] = "Nuh" ;
+										
+										arr_sura[72] = "Al Jin" ;
+										
+										arr_sura[73] = "Al Muzammil" ;
+										
+										arr_sura[74] = "Al Muddastir" ;
+										
+										arr_sura[75] = "Al Qiyaamah" ;
+										
+										arr_sura[76] = "Al Insaan" ;
+										
+										arr_sura[77] = "Al Mursalaat" ;
+										
+										arr_sura[78] = "An Naba'" ;
+										
+										arr_sura[79] = "An Naazi'at" ;
+										
+										arr_sura[80] = "'Abasa" ;
+										
+										arr_sura[81] = "At Takwiir" ;
+										
+										arr_sura[82] = "Al Infithar" ;
+										
+										arr_sura[83] = "Al Muthaffifin" ;
+										
+										arr_sura[84] = "Al Insyiqaq" ;
+										
+										arr_sura[85] = "Al Buruuj" ;
+										
+										arr_sura[86] = "Ath Thariq" ;
+										
+										arr_sura[87] = "Al A'laa" ;
+										
+										arr_sura[88] = "Al Ghaasyiah" ;
+										
+										arr_sura[89] = "Al Fajr" ;
+										
+										arr_sura[90] = "Al Balad" ;
+										
+										arr_sura[91] = "Asy Syams" ;
+										
+										arr_sura[92] = "Al Lail" ;
+										
+										arr_sura[93] = "Adh Dhuhaa" ;
+										
+										arr_sura[94] = "Asy Syarh" ;
+										
+										arr_sura[95] = "At Tiin" ;
+										
+										arr_sura[96] = "Al 'Alaq" ;
+										
+										arr_sura[97] = "Al Qadr" ;
+										
+										arr_sura[98] = "Al Bayyinah" ;
+										
+										arr_sura[99] = "Az Zalzalah" ;
+										
+										arr_sura[100] = "Al 'Aadiyah" ;
+										
+										arr_sura[101] = "Al Qaari'ah" ;
+										
+										arr_sura[102] = "At Takaatsur" ;
+										
+										arr_sura[103] = "Al 'Ashr" ;
+										
+										arr_sura[104] = "Al Humazah" ;
+										
+										arr_sura[105] = "Al Fiil" ;
+										
+										arr_sura[106] = "Quraisy" ;
+										
+										arr_sura[107] = "Al Maa'uun" ;
+										
+										arr_sura[108] = "Al Kautsar" ;
+										
+										arr_sura[109] = "Al Kafirun" ;
+										
+										arr_sura[110] = "An Nashr" ;
+										
+										arr_sura[111] = "Al Lahab" ;
+										
+										arr_sura[112] = "Al Ikhlash" ;
+										
+										arr_sura[113] = "Al Falaq" ;
+										
+										arr_sura[114] = "An Naas" ;
